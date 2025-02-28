@@ -1,0 +1,46 @@
+spring:
+  application:
+    name: epi-web
+  # 数据源配置
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/epiprophet?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=Asia/Shanghai
+    username: root
+    password: 050815
+    hikari:
+      connection-timeout: 30000
+      maximum-pool-size: 20
+
+  # Redis配置
+  # 可选服务器配置
+  servlet:
+    context-path: /api
+  main:
+    allow-circular-references: true  # 允许循环依赖
+  data:
+    redis:
+      port: 6379
+      password:
+      database: 0
+      host: localhost
+      timeout: 5000
+
+# MyBatis配置
+mybatis:
+  mapper-locations: classpath*:mapper/**/*.xml
+  configuration:
+    map-underscore-to-camel-case: true
+
+# 服务端口
+server:
+  port: 8080
+  servlet:
+    encoding:
+      charset: UTF-8
+      force: true
+
+epi:
+  framework:
+    jwt:
+      base64-encoded-secret-key: $2a$10$PVtHnkj86mJgf6li/yron.LRx/cQAlaiZkBJ9BeogCNTryXJRT1YC
+      ttl: 3600000
