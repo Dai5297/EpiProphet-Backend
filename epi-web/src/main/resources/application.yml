@@ -44,3 +44,18 @@ epi:
     jwt:
       base64-encoded-secret-key: $2a$10$PVtHnkj86mJgf6li/yron.LRx/cQAlaiZkBJ9BeogCNTryXJRT1YC
       ttl: 3600000
+    security:
+      ignore-url:
+        #        - /**
+        - /resource/menus/**
+        - /resource/myButten/**
+        - /customer/**
+        - /security/login
+        - /security/logout
+        - /doc.html
+        - /*-swagger/**
+        - /swagger-resources
+        - /v2/api-docs
+        - /webjars/**
+        - /common/**
+        - /ws/**

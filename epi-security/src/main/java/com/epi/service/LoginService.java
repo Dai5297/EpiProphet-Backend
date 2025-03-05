@@ -1,8 +1,8 @@
 package com.epi.service;
 
-import com.epi.base.Result;
-import com.epi.vo.UserLoginVo;
+import com.epi.dto.UserLoginDto;
+import com.epi.vo.UserVo;
 
 public interface LoginService {
-    String login(String username, String password);
+    UserVo login(UserLoginDto userLoginDto);
 }

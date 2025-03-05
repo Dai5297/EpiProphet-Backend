@@ -22,6 +22,15 @@ public class User extends BaseEntity {
     @ApiModelProperty(value = "用户类型：0-管理人员，1-用户", required = true, example = "0")
     private Integer type;
 
+    @ApiModelProperty(value = "用户昵称", required = true, example = "John Doe")
+    private String nickName;
+
+    @ApiModelProperty(value = "性别", required = true)
+    private Integer sex;
+
+    @ApiModelProperty(value = "启用/禁用", required = true)
+    private Integer dataState;
+
     @ApiModelProperty(value = "头像地址", example = "http://example.com/avatar.jpg")
     private String avatar;
 
