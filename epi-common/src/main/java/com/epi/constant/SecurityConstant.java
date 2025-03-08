@@ -3,7 +3,7 @@ package com.epi.constant;
 public class SecurityConstant {
 
     //用户前端token
-    public static final String USER_TOKEN = "authorization";
+    public static final String USER_TOKEN = "Authorization";
 
     //本人
     public static final String DATA_SCOPE_1 = "1";

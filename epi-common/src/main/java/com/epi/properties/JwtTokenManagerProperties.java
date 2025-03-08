@@ -7,6 +7,9 @@ import lombok.ToString;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Configuration;
 
+/**
+ *jwt token配置
+ */
 @Setter
 @Getter
 @NoArgsConstructor

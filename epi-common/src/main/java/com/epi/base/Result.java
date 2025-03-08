@@ -35,105 +35,67 @@ public class Result<T> implements Serializable {
     @ApiModelProperty(value = "返回结果")
     private T data;
 
-    /**
-     * 创建时间,处理json的时间参数解析
-     */
-    @JsonFormat(pattern = "yyyy-MM-dd hh:mm:ss",timezone = "GMT+8")
-    @ApiModelProperty(value = "操作时间")
-    private Date operationTime;
-
-    /**
-     * 初始化一个新创建的 AjaxResult 对象
-     *
-     * @param code 状态码
-     * @param msg  返回内容
-     */
-    public Result(int code, String msg) {
-        this.code = code;
-        this.msg = msg;
+    public Result<T> success(){
+        Result<T> result = new Result<>();
+        result.code = HttpStatus.SUCCESS;
+        result.msg = "操作成功";
+        result.data = null;
+        return result;
     }
 
-    /**
-     * 初始化一个新创建的 AjaxResult 对象
-     *
-     * @param code 状态码
-     * @param msg  返回内容
-     * @param data 数据对象
-     */
-    public Result(int code, String msg, T data) {
-        this.code = code;
-        this.msg = msg;
-        if (StringUtils.isNotNull(data)) {
-            this.data = data;
-        }
+    public static  Result success(Object data){
+        Result result = new Result<>();
+        result.code = HttpStatus.SUCCESS;
+        result.msg = "操作成功";
+        result.data = data;
+        return result;
     }
 
-    /**
-     * 返回成功消息
-     *
-     * @return 成功消息
-     */
-    public static Result success() {
-        return Result.success("操作成功");
+    public static Result success(String msg,Object data){
+        Result result = new Result<>();
+        result.code = HttpStatus.SUCCESS;
+        result.msg = msg;
+        result.data = data;
+        return result;
     }
 
-    /**
-     * 返回成功数据
-     *
-     * @return 成功消息
-     */
-    public static Result success(Object data) {
-        return Result.success("操作成功", data);
+    public static Result error(){
+        Result result = new Result<>();
+        result.code = HttpStatus.ERROR;
+        result.msg = "操作失败";
+        result.data = null;
+        return result;
     }
 
-    /**
-     * 返回成功消息
-     *
-     * @param msg 返回内容
-     * @return 成功消息
-     */
-    public static Result success(String msg) {
-        return Result.success(msg, null);
+    public static Result error(int code) {
+        Result result = new Result<>();
+        result.code = code;
+        result.msg = "操作失败";
+        result.data = null;
+        return result;
     }
 
-    /**
-     * 返回成功消息
-     *
-     * @param msg  返回内容
-     * @param data 数据对象
-     * @return 成功消息
-     */
-    public static Result success(String msg, Object data) {
-        return new Result(HttpStatus.SUCCESS, msg, data);
+    public static Result error(String msg){
+        Result result = new Result<>();
+        result.code = HttpStatus.ERROR;
+        result.msg = msg;
+        result.data = null;
+        return result;
     }
 
-    /**
-     * 返回错误消息
-     *
-     * @return
-     */
-    public static Result error() {
-        return Result.error("操作失败");
+    public static Result error(int code,String msg){
+        Result result = new Result<>();
+        result.code = code;
+        result.msg = msg;
+        result.data = null;
+        return result;
     }
 
-    /**
-     * 返回错误消息
-     *
-     * @param msg 返回内容
-     * @return 警告消息
-     */
-    public static Result error(String msg) {
-        return Result.error(msg, null);
-    }
-
-    /**
-     * 返回错误消息
-     *
-     * @param msg  返回内容
-     * @param data 数据对象
-     * @return 警告消息
-     */
-    public static Result error(String msg, Object data) {
-        return new Result(HttpStatus.ERROR, msg, data);
+    public static Result error(int code,String msg,Object data){
+        Result result = new Result<>();
+        result.code = code;
+        result.msg = msg;
+        result.data = data;
+        return result;
     }
 }

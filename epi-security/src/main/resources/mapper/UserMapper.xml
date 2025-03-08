@@ -3,59 +3,23 @@
 <mapper namespace="com.epi.mapper.UserMapper">
     <resultMap id="BaseResultMap" type="com.epi.entity.User">
         <id column="id" jdbcType="BIGINT" property="id"/>
-        <result column="username" jdbcType="VARCHAR" property="username"/>
+        <result column="user_name" jdbcType="VARCHAR" property="userName"/>
+        <result column="nick_name" jdbcType="VARCHAR" property="nickName"/>
         <result column="password" jdbcType="VARCHAR" property="password"/>
+        <result column="status" jdbcType="CHAR" property="status"/>
+        <result column="email" jdbcType="VARCHAR" property="email"/>
+        <result column="phone_number" jdbcType="VARCHAR" property="phoneNumber"/>
+        <result column="sex" jdbcType="CHAR" property="sex"/>
         <result column="avatar" jdbcType="VARCHAR" property="avatar"/>
-        <result column="nick_name" jdbcType="VARCHAR" property="nickName"/>
-        <result column="email" jdbcType="VARCHAR" property="email"/>
-        <result column="mobile" jdbcType="VARCHAR" property="phone"/>
-        <result column="sex" jdbcType="CHAR" property="sex"/>
-        <result column="data_state" jdbcType="CHAR" property="dataState"/>
-        <result column="create_time" jdbcType="TIMESTAMP" property="createTime"/>
-        <result column="update_time" jdbcType="TIMESTAMP" property="updateTime"/>
+        <result column="user_type" jdbcType="VARCHAR" property="userType"/>
         <result column="create_by" jdbcType="BIGINT" property="createBy"/>
-        <result column="update_by" jdbcType="BIGINT" property="updateBy"/>
-    </resultMap>
-    <resultMap id="BaseResultVoMap" type="com.epi.vo.UserVo">
-        <id column="id" jdbcType="BIGINT" property="id"/>
-        <result column="username" jdbcType="VARCHAR" property="username"/>
-        <result column="password" jdbcType="VARCHAR" property="password"/>
-        <result column="nick_name" jdbcType="VARCHAR" property="nickName"/>
-        <result column="email" jdbcType="VARCHAR" property="email"/>
-        <result column="real_name" jdbcType="VARCHAR" property="realName"/>
-        <result column="mobile" jdbcType="VARCHAR" property="mobile"/>
-        <result column="sex" jdbcType="CHAR" property="sex"/>
-        <result column="data_state" jdbcType="CHAR" property="dataState"/>
         <result column="create_time" jdbcType="TIMESTAMP" property="createTime"/>
-        <result column="update_time" jdbcType="TIMESTAMP" property="updateTime"/>
-        <result column="remark" jdbcType="VARCHAR" property="remark"/>
-        <result column="create_by" jdbcType="BIGINT" property="createBy"/>
         <result column="update_by" jdbcType="BIGINT" property="updateBy"/>
-        <result column="role_id" jdbcType="BIGINT" property="roleId"/>
+        <result column="update_time" jdbcType="TIMESTAMP" property="updateTime"/>
+        <result column="deleted" jdbcType="VARCHAR" property="deleted"/>
     </resultMap>
-    <sql id="Base_Column_List">
-        id, username, open_id, password, user_type, avatar, nick_name, email, real_name,
-    mobile, sex, data_state, create_time, update_time, remark, create_by, update_by,dept_no,post_no
-    </sql>
-
-
-    <select id="findUserVoForLogin" parameterType="com.epi.vo.UserVo" resultMap="BaseResultMap">
-        select
-        <include refid="Base_Column_List"/>
-        from sys_user
-        <where>
-            <if test="userVo.username!=null">
-                and username = #{userVo.username}
-            </if>
-            <if test="userVo.mobile!=null">
-                and mobile=#{userVo.mobile}
-            </if>
-            <if test="userVo.openId!=null">
-                and open_id=#{userVo.openId}
-            </if>
-            <if test="userVo.dataState!=null">
-                and data_state=#{userVo.dataState}
-            </if>
-        </where>
+    <select id="loadUserByUserName" resultType="com.epi.entity.User">
+        select * from sys_user where user_name = #{userName} and deleted = 0
     </select>
 </mapper>
+

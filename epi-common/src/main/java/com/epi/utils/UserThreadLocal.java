@@ -2,7 +2,8 @@ package com.epi.utils;
 
 import cn.hutool.core.util.ObjectUtil;
 import com.alibaba.fastjson.JSONObject;
-import com.epi.base.BaseVo;
+import com.epi.base.BaseEntity;
+import com.epi.base.LocalThreadEntity;
 
 public class UserThreadLocal {
 
@@ -80,7 +81,7 @@ public class UserThreadLocal {
         if (ObjectUtil.isEmpty(subject)) {
             return null;
         }
-        BaseVo baseVo = JSONObject.parseObject(subject, BaseVo.class);
+        LocalThreadEntity baseVo = JSONObject.parseObject(subject, LocalThreadEntity.class);
         return baseVo.getId() ;
     }
 }

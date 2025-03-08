@@ -1,8 +1,8 @@
 package com.epi.service;
 
-import com.epi.vo.UserVo;
+import com.epi.entity.User;
 
 public interface UserService {
 
-    UserVo findUserVoForLogin(String username);
+    User loadUserByUserName(String userName);
 }
