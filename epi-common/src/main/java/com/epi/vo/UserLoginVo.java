@@ -59,7 +59,7 @@ public class UserLoginVo extends BaseEntity {
     Role role;
 
     /**
-     *
+     * 资源
      */
-    List<SimpleGrantedAuthority> resources;
+    List<String> resources;
 }

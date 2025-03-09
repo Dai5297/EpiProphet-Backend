@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/security")
+@RequestMapping
 @Api(tags = "登录")
 public class LoginController {
 
@@ -22,7 +22,7 @@ public class LoginController {
 
     @PostMapping("/login")
     @ApiOperation(value = "登录")
-    public Result<UserLoginVo> login(@RequestBody UserLoginDto loginDto){
+    public Result<UserLoginVo> login(@RequestBody UserLoginDto loginDto) {
         UserLoginVo userLoginVo = loginService.login(loginDto);
         return Result.success(userLoginVo);
     }

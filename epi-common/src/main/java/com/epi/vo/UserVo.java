@@ -1,13 +1,13 @@
-package com.epi.entity;
+package com.epi.vo;
 
 import com.epi.base.BaseEntity;
+import com.epi.entity.Role;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
-/**
- * 用户实体
- */
+@EqualsAndHashCode(callSuper = true)
 @Data
-public class User extends BaseEntity {
+public class UserVo extends BaseEntity {
     /**
      * 用户名
      */
@@ -47,20 +47,4 @@ public class User extends BaseEntity {
      * 头像
      */
     private String avatar;
-
-    /**
-     * 用户类型(0管理员 1普通用户)
-     */
-    private Integer userType;
-
-    /**
-     * 删除标志(0代表存在 1代表删除)
-     */
-    private Integer deleted;
-
-    /**
-     * 角色
-     */
-    private Role role;
-
 }

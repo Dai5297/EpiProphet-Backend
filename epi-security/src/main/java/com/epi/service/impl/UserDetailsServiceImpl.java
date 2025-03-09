@@ -1,6 +1,9 @@
 package com.epi.service.impl;
 
 import cn.hutool.core.util.ObjectUtil;
+import com.epi.entity.Resource;
+import com.epi.service.PermissionService;
+import com.epi.service.RoleService;
 import com.epi.vo.LoginUserDetails;
 import com.epi.entity.User;
 import com.epi.exception.BaseException;
@@ -13,12 +16,19 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class UserDetailsServiceImpl implements UserDetailsService {
 
     @Autowired
     private UserService userService;
+
+    @Autowired
+    private RoleService roleService;
+
+    @Autowired
+    private PermissionService permissionService;
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
@@ -29,10 +39,11 @@ public class UserDetailsServiceImpl implements UserDetailsService {
             throw new BaseException("用户不存在");
         }
 
-        // TODO 获取用户权限
-        List<String> menus =  new ArrayList<>();
-        menus.add("user:add");
-        menus.add("user:update");
+        //  添加用户的角色
+        user.setRole(roleService.loadRoleByUser(user));
+        //  获取用户的权限
+        List<Resource> resourcesByRole = permissionService.getResourcesByRole(user.getRole());
+        List<String> menus= resourcesByRole.stream().map(Resource::getPath).toList();
 
         //  返回UserDetails对象
         return new LoginUserDetails(user, menus);

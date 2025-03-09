@@ -2,12 +2,19 @@ package com.epi.entity;
 
 import com.epi.base.BaseEntity;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 /**
  * 资源实体
  */
+@EqualsAndHashCode(callSuper = true)
 @Data
 public class Resource extends BaseEntity {
+
+    /**
+     * 主键
+     */
+    private Long id;
 
     /**
      * 菜单名
@@ -40,14 +47,9 @@ public class Resource extends BaseEntity {
     private String perms;
 
     /**
-     * 菜单图标
+     * 删除标志(0代表存在 1代表删除)
      */
-    private String icon;
-
-    /**
-     * 删除标记(0未删除 1已删除)
-     */
-    private Integer defFlag;
+    private Integer delFlag;
 
     /**
      * 备注

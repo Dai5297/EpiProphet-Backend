@@ -1,6 +1,6 @@
 package com.epi.config;
 
-import com.epi.intercept.JwtAuthenticationTokenIntercept;
+import com.epi.filter.JwtAuthenticationTokenFilter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -16,7 +16,7 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 public class SecurityConfig {
 
     @Autowired
-    private JwtAuthenticationTokenIntercept jwtAuthenticationTokenIntercept;
+    private JwtAuthenticationTokenFilter jwtAuthenticationTokenFilter;
 
     @Bean
     public SecurityFilterChain filterChain (HttpSecurity http) throws Exception {
@@ -27,11 +27,11 @@ public class SecurityConfig {
         http.authorizeHttpRequests(auth->
                 auth
                         //  放行登录
-                        .requestMatchers("/security/login").permitAll()
+                        .requestMatchers("/login").permitAll()
                         //  验证其余所有请求
                         .anyRequest().authenticated()
         );
-        http.addFilterBefore(jwtAuthenticationTokenIntercept,  UsernamePasswordAuthenticationFilter.class);
+        http.addFilterBefore(jwtAuthenticationTokenFilter,  UsernamePasswordAuthenticationFilter.class);
         return http.build();
     }
 
