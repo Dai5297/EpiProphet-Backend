@@ -19,6 +19,7 @@ import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
+import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.stereotype.Service;
 
@@ -48,9 +49,11 @@ public class LoginServiceImpl implements LoginService {
         //  1.调用Authentication中的Authenticate方法进行认证
         UsernamePasswordAuthenticationToken upat = new UsernamePasswordAuthenticationToken(loginDto.getUsername(), loginDto.getPassword());
         //  2.实际是调用重写的UserDetailsImpl中的重写方法loadUserByUsername 最后会返回一个UserDetails对象(LoginUser) 存入Authentication的Principal
-        Authentication authenticate = authenticationManager.authenticate(upat);
-        if (ObjectUtil.isEmpty(authenticate) || ObjectUtil.isEmpty(authenticate.getPrincipal())){
-            throw new BaseException("账号或密码错误");
+        Authentication authenticate = null;
+        try {
+            authenticate = authenticationManager.authenticate(upat);
+        } catch (AuthenticationException e) {
+            throw new BaseException("401", "用户名或密码错误");
         }
         //  3.获取登录用户详情
         LoginUserDetails principal = (LoginUserDetails) authenticate.getPrincipal();
