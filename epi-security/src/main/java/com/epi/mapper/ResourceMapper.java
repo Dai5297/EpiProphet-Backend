@@ -5,6 +5,11 @@ import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
 
+/**
+ * 资源Mapper层
+ * @author dai
+ */
+
 @Mapper
 public interface ResourceMapper {
 

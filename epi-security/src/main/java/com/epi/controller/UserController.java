@@ -11,6 +11,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+/**
+ * 用户接口
+ * @author dai
+ */
+
 @RestController
 @RequestMapping("/user")
 @Api(tags = "用户相关接口")

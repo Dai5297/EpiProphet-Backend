@@ -1,5 +1,9 @@
 package com.epi.constant;
 
+/**
+ * 状态码
+ * @author dai
+ */
 public class HttpStatus {
     /**
      * 操作成功

@@ -10,6 +10,11 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
+/**
+ * 用户详情实现类
+ * @author dai
+ */
+
 @Data
 public class LoginUserDetails implements UserDetails {
 

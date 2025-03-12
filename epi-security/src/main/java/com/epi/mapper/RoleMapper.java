@@ -3,6 +3,11 @@ package com.epi.mapper;
 import com.epi.entity.Role;
 import org.apache.ibatis.annotations.Mapper;
 
+/**
+ * 角色Mapper层
+ * @author dai
+ */
+
 @Mapper
 public interface RoleMapper {
     /**

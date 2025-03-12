@@ -5,6 +5,11 @@ import com.epi.entity.Role;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
+/**
+ * 用户对象
+ * @author dai
+ */
+
 @EqualsAndHashCode(callSuper = true)
 @Data
 public class UserVo extends BaseEntity {

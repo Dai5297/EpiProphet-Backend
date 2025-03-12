@@ -17,6 +17,7 @@ import java.util.List;
 
 /***
  * 对象转换工具，当对象成员变量属性：名称及类型相同时候会自动填充其值
+ * @author dai
  */
 @Slf4j
 public class BeanConv {

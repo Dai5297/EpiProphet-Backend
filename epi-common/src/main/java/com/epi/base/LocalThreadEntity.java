@@ -8,6 +8,10 @@ import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
 
+/**
+ * 本地线程实体
+ * @author dai
+ */
 @Data
 @NoArgsConstructor
 @AllArgsConstructor

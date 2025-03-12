@@ -2,6 +2,7 @@ package com.epi.constant;
 
 /**
  * 静态变量
+ * @author dai
  */
 public class SuperConstant {
 

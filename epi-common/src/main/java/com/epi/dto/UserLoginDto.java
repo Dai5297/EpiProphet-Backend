@@ -2,6 +2,11 @@ package com.epi.dto;
 
 import lombok.Data;
 
+/**
+ * 用户登录dto
+ * @author dai
+ */
+
 @Data
 public class UserLoginDto {
     /**

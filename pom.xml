@@ -33,9 +33,11 @@
         <redisson.version>3.11.2</redisson.version>
         <druid>1.2.1</druid>
         <xxl-job.version>2.3.0</xxl-job.version>
+        <spring-ai.version>1.0.0-M6</spring-ai.version>
     </properties>
 
     <modules>
+        <module>epi-chat</module>
         <module>epi-common</module>
         <module>epi-framework</module>
         <module>epi-security</module>
@@ -150,6 +152,27 @@
                 <version>${fastjson.version}</version>
             </dependency>
 
+            <!--SpringAI依赖-->
+            <dependency>
+                <groupId>org.springframework.ai</groupId>
+                <artifactId>spring-ai-bom</artifactId>
+                <version>${spring-ai.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.ai</groupId>
+                <artifactId>spring-ai-openai-spring-boot-starter</artifactId>
+                <version>${spring-ai.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.ai</groupId>
+                <artifactId>spring-ai-ollama-spring-boot-starter</artifactId>
+                <version>${spring-ai.version}</version>
+            </dependency>
+
             <dependency>
                 <groupId>com.dai</groupId>
                 <artifactId>epi-web</artifactId>
@@ -195,6 +218,12 @@
             <dependency>
                 <groupId>com.dai</groupId>
                 <artifactId>epi-common</artifactId>
+                <version>0.0.1-SNAPSHOT</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.dai</groupId>
+                <artifactId>epi-chat</artifactId>
                 <version>0.0.1-SNAPSHOT</version>
             </dependency>
         </dependencies>

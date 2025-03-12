@@ -7,6 +7,7 @@ import java.util.List;
 
 /**
  * 用户实体
+ * @author dai
  */
 @Data
 public class Role extends BaseEntity {

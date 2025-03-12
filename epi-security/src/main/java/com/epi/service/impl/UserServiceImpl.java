@@ -12,6 +12,11 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+/**
+ * 用户服务实现类
+ * @author dai
+ */
+
 @Service
 public class UserServiceImpl implements UserService {
 

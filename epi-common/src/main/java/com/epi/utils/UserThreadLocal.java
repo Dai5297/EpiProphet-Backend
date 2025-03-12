@@ -5,6 +5,11 @@ import com.alibaba.fastjson.JSONObject;
 import com.epi.base.BaseEntity;
 import com.epi.base.LocalThreadEntity;
 
+/**
+ * 用户信息线程池工具类
+ * @author dai
+ */
+
 public class UserThreadLocal {
 
 

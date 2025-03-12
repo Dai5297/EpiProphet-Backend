@@ -9,7 +9,9 @@ import org.springframework.context.annotation.Configuration;
 
 /**
  *jwt token配置
+ * @author dai
  */
+
 @Setter
 @Getter
 @NoArgsConstructor

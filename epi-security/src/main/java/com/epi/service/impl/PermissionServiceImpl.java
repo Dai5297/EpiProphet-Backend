@@ -13,6 +13,11 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+/**
+ * 权限服务实现类
+ * @author dai
+ */
+
 @Service
 public class PermissionServiceImpl implements PermissionService {
 

@@ -11,6 +11,11 @@ import java.nio.charset.StandardCharsets;
 import java.util.Date;
 import java.util.Map;
 
+/**
+ * jwt工具类
+ * @author dai
+ */
+
 public class JwtUtil {
     /**
      * 生成jwt

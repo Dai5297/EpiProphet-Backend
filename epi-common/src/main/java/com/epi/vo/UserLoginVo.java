@@ -8,6 +8,11 @@ import org.springframework.security.core.authority.SimpleGrantedAuthority;
 
 import java.util.List;
 
+/**
+ * 用户登录vo
+ * @author dai
+ */
+
 @Data
 public class UserLoginVo extends BaseEntity {
 

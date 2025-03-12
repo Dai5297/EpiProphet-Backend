@@ -11,6 +11,11 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
+/**
+ * 权限接口
+ * @author dai
+ */
+
 @RestController
 @RequestMapping("/permission")
 @Api(tags = "权限相关接口")

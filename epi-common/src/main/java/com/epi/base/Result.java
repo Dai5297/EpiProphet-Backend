@@ -12,6 +12,12 @@ import lombok.NoArgsConstructor;
 import java.io.Serializable;
 import java.util.Date;
 
+/**
+ * 统一返回结果类
+ * @author dai
+ * @param <T>
+ */
+
 @Data
 @Builder
 @AllArgsConstructor

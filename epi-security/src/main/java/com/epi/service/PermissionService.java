@@ -5,6 +5,11 @@ import com.epi.entity.Role;
 
 import java.util.List;
 
+/**
+ * 权限服务接口
+ * @author dai
+ */
+
 public interface PermissionService {
 
     /**

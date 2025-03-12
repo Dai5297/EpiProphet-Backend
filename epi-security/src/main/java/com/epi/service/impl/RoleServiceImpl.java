@@ -7,6 +7,11 @@ import com.epi.service.RoleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+/**
+ * 角色服务实现类
+ * @author dai
+ */
+
 @Service
 public class RoleServiceImpl implements RoleService {
 

@@ -7,6 +7,7 @@ import java.util.Map;
 
 /**
  * 判断对象是否为空的工具类
+ * @author dai
  */
 public abstract class EmptyUtil {
 

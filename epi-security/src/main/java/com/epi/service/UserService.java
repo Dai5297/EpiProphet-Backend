@@ -3,6 +3,11 @@ package com.epi.service;
 import com.epi.entity.User;
 import com.epi.vo.UserVo;
 
+/**
+ * 用户服务接口
+ * @author dai
+ */
+
 public interface UserService {
 
     /**

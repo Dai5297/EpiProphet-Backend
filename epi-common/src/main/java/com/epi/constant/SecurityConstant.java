@@ -1,5 +1,10 @@
 package com.epi.constant;
 
+/**
+ * 权限常量
+ * @author dai
+ */
+
 public class SecurityConstant {
 
     //用户前端token

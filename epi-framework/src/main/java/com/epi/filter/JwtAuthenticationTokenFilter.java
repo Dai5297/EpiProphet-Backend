@@ -28,6 +28,11 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
+/**
+ * Jwt请求校验过滤器
+ * @author dai
+ */
+
 @Component
 public class JwtAuthenticationTokenFilter extends OncePerRequestFilter {
 

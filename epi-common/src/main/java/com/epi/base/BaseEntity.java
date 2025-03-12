@@ -11,6 +11,7 @@ import java.time.LocalDateTime;
 
 /**
  * 实体基础类
+ * @author dai
  */
 @Data
 @NoArgsConstructor

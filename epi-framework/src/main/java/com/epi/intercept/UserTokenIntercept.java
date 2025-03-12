@@ -18,6 +18,11 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.method.HandlerMethod;
 import org.springframework.web.servlet.HandlerInterceptor;
 
+/**
+ * 用户信息获取拦截器
+ * @author dai
+ */
+
 @Component
 public class UserTokenIntercept implements HandlerInterceptor {
 

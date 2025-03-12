@@ -18,6 +18,11 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
+/**
+ * 用户详情服务实现类
+ * @author dai
+ */
+
 @Service
 public class UserDetailsServiceImpl implements UserDetailsService {
 

@@ -12,6 +12,11 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+/**
+ * 登录接口
+ * @author dai
+ */
+
 @RestController
 @RequestMapping
 @Api(tags = "登录")

@@ -5,6 +5,7 @@ import lombok.Data;
 
 /**
  * 用户实体
+ * @author dai
  */
 @Data
 public class User extends BaseEntity {

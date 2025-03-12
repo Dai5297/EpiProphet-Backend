@@ -29,6 +29,11 @@ import java.util.Map;
 import java.util.UUID;
 import java.util.concurrent.TimeUnit;
 
+/**
+ * 登录服务实现类
+ * @author dai
+ */
+
 @Service
 public class LoginServiceImpl implements LoginService {
 

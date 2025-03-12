@@ -6,6 +6,7 @@ import lombok.EqualsAndHashCode;
 
 /**
  * 资源实体
+ * @author dai
  */
 @EqualsAndHashCode(callSuper = true)
 @Data
