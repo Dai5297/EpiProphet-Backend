@@ -13,13 +13,13 @@ public interface UserService {
     /**
      * 根据用户名查询用户
      * @param userName
-     * @return
+     * @return User
      */
     User loadUserByUserName(String userName);
 
     /**
      * 获取当前用户
-     * @return
+     * @return UserVo
      */
     UserVo getCurrentUser();
 }

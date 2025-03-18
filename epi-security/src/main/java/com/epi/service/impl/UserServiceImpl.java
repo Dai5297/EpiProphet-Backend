@@ -8,7 +8,6 @@ import com.epi.service.UserService;
 import com.epi.utils.UserThreadLocal;
 import com.epi.vo.UserLoginVo;
 import com.epi.vo.UserVo;
-import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
