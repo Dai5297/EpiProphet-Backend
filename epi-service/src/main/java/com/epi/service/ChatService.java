@@ -1,4 +1,4 @@
-package com.dai.epichat.service;
+package com.epi.service;
 
 import com.epi.dto.ChatDto;
 
@@ -13,5 +13,5 @@ public interface ChatService {
      * @param chatDto 请求参数
      * @return AI回复
      */
-    public String chat(ChatDto chatDto);
+    String chat(ChatDto chatDto);
 }

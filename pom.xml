@@ -37,7 +37,6 @@
     </properties>
 
     <modules>
-        <module>epi-chat</module>
         <module>epi-common</module>
         <module>epi-framework</module>
         <module>epi-security</module>
@@ -221,11 +220,6 @@
                 <version>0.0.1-SNAPSHOT</version>
             </dependency>
 
-            <dependency>
-                <groupId>com.dai</groupId>
-                <artifactId>epi-chat</artifactId>
-                <version>0.0.1-SNAPSHOT</version>
-            </dependency>
         </dependencies>
     </dependencyManagement>
 

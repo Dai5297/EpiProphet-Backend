@@ -1,10 +1,9 @@
-package com.dai.epichat.service.impl;
+package com.epi.service.impl;
 
-import com.dai.epichat.repository.ChatRepository;
-import com.dai.epichat.service.ChatService;
+import com.epi.repository.ChatRepository;
+import com.epi.service.ChatService;
 import com.epi.dto.ChatDto;
 import org.springframework.ai.chat.client.ChatClient;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import static org.springframework.ai.chat.client.advisor.AbstractChatMemoryAdvisor.CHAT_MEMORY_CONVERSATION_ID_KEY;

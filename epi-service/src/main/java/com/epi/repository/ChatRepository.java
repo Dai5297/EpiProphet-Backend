@@ -1,4 +1,4 @@
-package com.dai.epichat.repository;
+package com.epi.repository;
 
 import java.util.Set;
 

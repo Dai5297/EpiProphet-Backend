@@ -5,6 +5,7 @@ import com.epi.constant.SecurityConstant;
 import com.epi.constant.UserCacheConstant;
 import com.epi.exception.BaseException;
 import com.epi.properties.JwtTokenManagerProperties;
+import com.epi.security.UserAuthorizationManager;
 import com.epi.utils.JwtUtil;
 import com.epi.vo.UserLoginVo;
 import io.jsonwebtoken.Claims;

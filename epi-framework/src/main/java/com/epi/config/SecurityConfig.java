@@ -1,6 +1,7 @@
 package com.epi.config;
 
 import com.epi.filter.JwtAuthenticationTokenFilter;
+import com.epi.security.UserAuthorizationManager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -23,6 +24,9 @@ public class SecurityConfig {
     @Autowired
     private JwtAuthenticationTokenFilter jwtAuthenticationTokenFilter;
 
+    @Autowired
+    private UserAuthorizationManager authorizationManager;
+
     @Bean
     public SecurityFilterChain filterChain (HttpSecurity http) throws Exception {
         //  关闭csrf
@@ -33,8 +37,11 @@ public class SecurityConfig {
                 auth
                         //  放行登录
                         .requestMatchers("/login").permitAll()
+                        //  放行获取权限请求
+                        .requestMatchers("/permission").permitAll()
+                        .requestMatchers("/user/current").permitAll()
                         //  验证其余所有请求
-                        .anyRequest().authenticated()
+                        .anyRequest().access(authorizationManager)
         );
         http.addFilterBefore(jwtAuthenticationTokenFilter,  UsernamePasswordAuthenticationFilter.class);
         return http.build();
