@@ -1,6 +1,7 @@
 package com.epi.config;
 
 import com.epi.filter.JwtAuthenticationTokenFilter;
+import com.epi.properties.SecurityConfigProperties;
 import com.epi.security.UserAuthorizationManager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -8,10 +9,13 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+
+import java.util.List;
 
 /**
  * Security配置类
@@ -27,19 +31,20 @@ public class SecurityConfig {
     @Autowired
     private UserAuthorizationManager authorizationManager;
 
+    @Autowired
+    private SecurityConfigProperties securityConfigProperties;
+
     @Bean
     public SecurityFilterChain filterChain (HttpSecurity http) throws Exception {
+        List<String> ignoreUrl = securityConfigProperties.getIgnoreUrl();
         //  关闭csrf
-        http.csrf(csrf -> csrf.disable());
+        http.csrf(AbstractHttpConfigurer::disable);
         //  配置请求拦截方式
         //  requestsMatchers() 表示某个请求不用认证
         http.authorizeHttpRequests(auth->
                 auth
                         //  放行登录
-                        .requestMatchers("/login").permitAll()
-                        //  放行获取权限请求
-                        .requestMatchers("/permission").permitAll()
-                        .requestMatchers("/user/current").permitAll()
+                        .requestMatchers(ignoreUrl.toArray(new String[ignoreUrl.size()])).permitAll()
                         //  验证其余所有请求
                         .anyRequest().access(authorizationManager)
         );

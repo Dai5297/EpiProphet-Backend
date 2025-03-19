@@ -76,11 +76,10 @@ epi:
     security:
       ignore-url:
         #        - /**
-        - /resource/menus/**
-        - /resource/myButten/**
-        - /customer/**
-        - /security/login
-        - /security/logout
+        - /permission
+        - /user/current
+        - /login
+        - /logout
         - /doc.html
         - /*-swagger/**
         - /swagger-resources
@@ -88,3 +87,4 @@ epi:
         - /webjars/**
         - /common/**
         - /ws/**
+      defaule-password: 123456
