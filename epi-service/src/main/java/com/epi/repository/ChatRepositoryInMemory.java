@@ -1,5 +1,7 @@
 package com.epi.repository;
 
+import org.springframework.stereotype.Component;
+
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
@@ -9,6 +11,7 @@ import java.util.Set;
  * 聊天记录
  * @author dai
  */
+@Component
 public class ChatRepositoryInMemory implements ChatRepository {
 
     private final Map<String, Set<String>> chatIds = new HashMap<>();

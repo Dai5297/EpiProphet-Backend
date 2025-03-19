@@ -37,7 +37,7 @@ public class ChatConfig {
     @Bean
     public ChatClient chatClient(OllamaChatModel model, ChatMemory memory){
         return ChatClient.builder(model)
-                .defaultSystem("你是一个疫情助手, 你可以分析疫情数据，推测疫情发展情况")
+                .defaultSystem("你是一个疫情助手, 你可以分析疫情数据，推测疫情发展情况，还可以根据用户的症状推测疾病并给出建议方案")
                 .defaultAdvisors(new SimpleLoggerAdvisor()) // 添加默认的Advisor,记录日志
                 .defaultAdvisors(new MessageChatMemoryAdvisor(memory))
                 .build(); // 构建ChatClient实例

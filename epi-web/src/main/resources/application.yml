@@ -41,9 +41,6 @@ spring:
           dimensions: 1024
 
   # Redis配置
-  # 可选服务器配置
-  servlet:
-    context-path: /api
   main:
     allow-circular-references: true  # 允许循环依赖
   data:
@@ -53,6 +50,11 @@ spring:
       database: 0
       host: localhost
       timeout: 5000
+  neo4j:
+    authentication:
+      username: neo4j
+      password: 20050918
+    uri: http://localhost:7474
 
 # MyBatis配置
 mybatis:
